@@ -6,3 +6,5 @@
 stands the functionality in which the text is scanned and checked.
 
 Program has user interface and also works throught the terminal(index.js), please note if you checking through terminal to use index.js.
+
+Also contains html page where dropbox is found,when dropbox is activated it scans a book.

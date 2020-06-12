@@ -1,9 +1,18 @@
 const fs = require("fs");
 const book = "warandpeace.txt";
 
+const stringSplit = str => {
+  return str.split(/\s+/);
+};
+
+const clean = str => {
+  const reg = /[.,"();*#\[\]?!@%_“$:”0-9‘]/g;
+  return str.toLowerCase().replace(reg, "");
+};
+
 fs.readFile(book, "utf8", (err, str) => {
   //turn to lowercase
-  str = cleanString(str);
+  str = clean(str);
 
   const search = stringSplit(str);
 
@@ -30,12 +39,3 @@ fs.readFile(book, "utf8", (err, str) => {
   console.log("the word most frequently used is....:" + word);
   console.log("appearing :" + count + " times");
 });
-
-const stringSplit = str => {
-  return str.split(/\s+/);
-};
-
-const cleanString = str => {
-  const reg = /[.,"();*#\[\]?!@%_“$:”0-9‘]/g;
-  return str.toLowerCase().replace(reg, "");
-};

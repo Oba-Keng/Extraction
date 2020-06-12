@@ -29,6 +29,8 @@ fs.readFile(book, "utf8", (err, str) => {
   let word,
     count = 0;
 
+  //searches for frequency
+
   for (const prop in searchObject) {
     if (searchObject[prop] > count) {
       word = prop;
